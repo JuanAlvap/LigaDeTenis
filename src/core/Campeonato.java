@@ -34,6 +34,9 @@ public class Campeonato {
  * Ganador: Rafael Nadal
      */
     public void showResumen() {
+        ArrayList<Juego> ganador = new ArrayList<>();
+        int index = this.juegos.size();
+        int controller = 0;
         for (Juego juego : this.juegos) {
             System.out.println("Jugador 1: " + juego.getJugador1().getNombre());
             System.out.println("Jugador 2: " + juego.getJugador2().getNombre());
@@ -41,9 +44,15 @@ public class Campeonato {
             for (int i = 0; i < juego.getSets().size(); i++) {
                 Set set = juego.getSets().get(i);
                 System.out.println("Set " + (i + 1) + ": " + set.getPuntosJugador1() + " - " + set.getPuntosJugador2());
+                
             }
             System.out.println("Ganador: " + juego.getGanador().getNombre());
             System.out.println("");
+            controller++;
+            
+            if (controller == index){
+                System.out.println("El ganador del campeonato es: "+juego.getGanador().getNombre());
+            }
         }
 
     }
