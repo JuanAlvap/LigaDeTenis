@@ -2,8 +2,8 @@ package core;
 
 import java.util.ArrayList;
 
-public class Jugador extends Persona{
-    
+public class Jugador extends Persona {
+
     private int sueldo;
     private ArrayList<Juego> juegos;
 
@@ -14,4 +14,3 @@ public class Jugador extends Persona{
     }
 
 }
-

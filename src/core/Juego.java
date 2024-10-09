@@ -32,27 +32,27 @@ public class Juego {
         this.juegoSiguiente = null;
         this.sets = new ArrayList<>();
     }
-    
-    public Jugador getGanador(){
-        int jugador1 = 0; 
-            int jugador2 = 0;
-            for (int i = 0; i < getSets().size(); i++) {
-                Set set = getSets().get(i);
-                if ((set.getPuntosJugador1()-2) == set.getPuntosJugador2()){
-                    jugador1 ++;
-                }else if (set.getPuntosJugador1() == (set.getPuntosJugador2()-2)){
-                    jugador2 ++;
-                }else if(set.getPuntosJugador1() == 6){
-                    jugador1 ++;
-                }else if(set.getPuntosJugador2() == 6){
-                    jugador2 ++;
-                } 
+
+    public Jugador getGanador() {
+        int jugador1 = 0;
+        int jugador2 = 0;
+        for (int i = 0; i < getSets().size(); i++) {
+            Set set = getSets().get(i);
+            if ((set.getPuntosJugador1() - 2) == set.getPuntosJugador2()) {
+                jugador1++;
+            } else if (set.getPuntosJugador1() == (set.getPuntosJugador2() - 2)) {
+                jugador2++;
+            } else if (set.getPuntosJugador1() == 6) {
+                jugador1++;
+            } else if (set.getPuntosJugador2() == 6) {
+                jugador2++;
             }
-            if (jugador1 > jugador2){
-                return this.jugador1;
-            }else{
-                return this.jugador2;
-            }
+        }
+        if (jugador1 > jugador2) {
+            return this.jugador1;
+        } else {
+            return this.jugador2;
+        }
     }
 
     // Revisar por si se explota el codigo
@@ -97,7 +97,7 @@ public class Juego {
         }
         return false;
     }
-    
+
     public Jugador getJugador1() {
         return jugador1;
     }
@@ -114,4 +114,6 @@ public class Juego {
         return sets;
     }
     
+    
+
 }

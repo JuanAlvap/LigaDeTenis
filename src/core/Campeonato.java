@@ -34,7 +34,6 @@ public class Campeonato {
  * Ganador: Rafael Nadal
      */
     public void showResumen() {
-        ArrayList<Juego> ganador = new ArrayList<>();
         int index = this.juegos.size();
         int controller = 0;
         for (Juego juego : this.juegos) {
@@ -55,6 +54,12 @@ public class Campeonato {
             }
         }
 
+        
+        
+    }
+
+    public ArrayList<Juego> getJuegos() {
+        return juegos;
     }
 
 }
