@@ -21,6 +21,9 @@ public class Juego {
         this.juegoSiguiente = null;
         this.sets = new ArrayList<>();
 
+        this.juez.addJuego(this);
+        this.jugador1.addJuego(this);
+        this.jugador2.addJuego(this);
     }
 
     public Juego(Juego juegoPrevio1, Juego juegoPrevio2, Juez juez) {
@@ -31,6 +34,13 @@ public class Juego {
         this.jugador2 = juegoPrevio2.getGanador();
         this.juegoSiguiente = null;
         this.sets = new ArrayList<>();
+
+        this.juegoPrevio1.setJuegoSiguiente(this);
+        this.juegoPrevio2.setJuegoSiguiente(this);
+
+        this.juez.addJuego(this);
+        this.jugador1.addJuego(this);
+        this.jugador2.addJuego(this);
     }
 
     public Jugador getGanador() {
@@ -53,6 +63,10 @@ public class Juego {
         } else {
             return this.jugador2;
         }
+    }
+
+    public void setJuegoSiguiente(Juego juegoSiguiente) {
+        this.juegoSiguiente = juegoSiguiente;
     }
 
     // Revisar por si se explota el codigo
@@ -113,7 +127,5 @@ public class Juego {
     public ArrayList<Set> getSets() {
         return sets;
     }
-    
-    
 
 }

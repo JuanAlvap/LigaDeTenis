@@ -2,6 +2,7 @@ package core;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class LigaTenis {
 
@@ -63,7 +64,7 @@ public class LigaTenis {
      */
     public void calcSetsGanadosJugadoresCampeonato(int index) {
         Campeonato campeonato = getCampeonato(index);
-        HashMap<String, Integer> setsJugador = new HashMap<String, Integer>();
+        LinkedHashMap<String, Integer> setsJugador = new LinkedHashMap<String, Integer>();
         for (Juego juego : campeonato.getJuegos()) {
             String nombre1 = juego.getJugador1().getNombre();
             String nombre2 = juego.getJugador2().getNombre();
@@ -75,14 +76,14 @@ public class LigaTenis {
             }
             for (Set set : juego.getSets()) {
                 if (set.getPuntosJugador1() > set.getPuntosJugador2()){
-                    setsJugador.put(nombre1, setsJugador.get(nombre1)+1);
+                    setsJugador.replace(nombre1, setsJugador.get(nombre1)+1);
                 }else{
-                    setsJugador.put(nombre2, setsJugador.get(nombre2)+1);
+                    setsJugador.replace(nombre2, setsJugador.get(nombre2)+1);
                 }
             }
         }
-        
-        setsJugador.forEach( (k, v) -> { System.out.println("El Jugador: " +k + " gano " + v+ " sets en el campeonato"); } );
+        System.out.println("");
+        setsJugador.forEach( (k, v) -> { System.out.println("El jugador: " +k + " gano " + v+ " sets en el campeonato"); } );
     }
 
 }

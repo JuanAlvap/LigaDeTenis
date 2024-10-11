@@ -72,15 +72,15 @@ public class Main {
  * ------------- Resultados -------------
  *
  * 
- * Jugador 1: Rafael Nadal 
- * Jugador 2: Martina Hingis 
- * Juez: Pedro Perez 
- * Set 1: 6 - 4 
- * Set 2: 1 - 6 
- * Set 3: 6 - 3 
- * Ganador: Rafael Nadal
- *
- * Jugador 1: Roger Federer
+Jugador 1: Rafael Nadal 
+Jugador 2: Martina Hingis 
+Juez: Pedro Perez 
+Set 1: 6 - 4 
+Set 2: 1 - 6 
+Set 3: 6 - 3 
+Ganador: Rafael Nadal
+
+Jugador 1: Roger Federer
 Jugador 2: Monica Seles
 Juez: Alejandro Fernandez
 Set 1: 6 - 1
